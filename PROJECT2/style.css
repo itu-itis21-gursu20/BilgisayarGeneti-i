@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-image: url("https://img.freepik.com/free-vector/gradient-dynamic-blue-lines-background_23-2148995756.jpg?w=360");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box {
+    width: 450px;
+    padding: 40px;
+    margin: 50px auto;
+    border: 2px solid rgb(0, 0, 0);
+    background-color:rgb(136, 12, 12);
+    text-align: center;
+    color: white;
+    filter:drop-shadow(3px 4px 33px rgb(255, 255, 255));
+}
+
+.box img {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 50%;
+    transition: 300ms ease transform;
+    cursor: pointer;
+}
+
+.box img:hover {
+    transform: scale(1.1);
+}
+
+.box h3 {
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 4px;
+    font-weight: 100;
+}
+
+/* .job {
+    display: flex;
+    justify-content: center;
+    padding-top:20px;
+    font-size:30px;
+    column-gap: 20px;
+} */
+
+.box h6 {
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.box p {
+    /* padding: 20px;. */
+    text-align: justify; /* paragraftaki cümleler satır sonuna kadar gider ve sonra aşağı iner */
+}
+
+ul {
+    margin: 0;
+    padding:0;
+    /* list-style: none;
+    display: flex;
+    justify-content: center;
+    column-gap: 6x; */
+}
+
+ul li {
+    display: inline-block;
+    margin: 6px;
+    list-style: none;
+}
+
+ul li a {
+    color: white;
+    font-size: 60px;
+    transition: 200ms cubic color;
+
+}
+
+ul li a:hover {
+    color: rgb(203, 190, 190);
+}
