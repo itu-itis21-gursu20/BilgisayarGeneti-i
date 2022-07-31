@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, green, blue);
+}
+
+.container {
+    max-width: 350px;
+    width: 100%;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+    padding: 25px 30px;
+    border-radius: 5px;
+    position: relative;
+    background-color:white;
+}
+
+.container .logo img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 5px;
+    right: 15px;
+    border-radius: 50%;
+    border: 5px solid red;
+}
+
+.container form .title {
+    font-size: 30px;
+    padding: 20px 0 10px 0;
+    position: relative;
+}
+
+.container form .title::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    background-color: red;
+    height: 5px;
+    bottom: 8px;
+    left: 0;
+    border-radius: 3px;
+}
+
+.container form .input-box {
+    width: 100%;
+    height: 45px;
+    margin-top: 25px;
+    position: relative;
+}
+
+.container form .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 16px;
+}
+
+.container form .input-box .underline::before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: #ccc;
+    left: 0;
+    bottom: 0;
+    transform: scale(0);
+    transition: 300ms ease transform;
+    transform-origin: left;
+}
+
+.container form .input-box input:focus+.underline::before,
+.container form .input-box input:valid+.underline::before {
+    transform: scale(1);
+    background-color: red;
+}
+
+.container form .button {
+    margin: 40px 0 20px 0;
+}
+
+.container form .input-box input[type="submit"] {
+    font-size: 17px;
+    color: white;
+    background-color:red;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 300ms all ease-in-out;
+}
+
+.container form .input-box input[type="submit"]:hover {
+    background-color:rgba(255, 247, 247, 0.787);
+    color: red;
+    letter-spacing: 4px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.container .text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size:14px;
+}
+
+.container .github a, .container .facebook a, .container .twitter a {
+    display: block;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    line-height: 40px;
+    padding-left: 20px;
+}
+
+.container .github a {
+    background-color: #000;
+    margin: 20px 0 10px 0;
+}
+
+.container .github a:hover {
+    background-color:rgb(160, 160, 160);
+}
+
+.container .twitter a {
+    background-color: rgb(58, 161, 235);
+    margin: 20px 0 10px 0;
+}
+
+.container .twitter a:hover {
+    background-color:rgb(154, 228, 255);
+}
+
+
+.container .facebook a {
+    background-color: rgb(22, 48, 175);
+    margin: 20px 0 50px 0;
+}
+
+.container .facebook a:hover {
+    background-color:rgb(89, 96, 149);
+}
+
+.container .github i, .container .twitter i, .container .facebook i {
+    font-size: 22px;
+    margin-right: 20px;
+}
