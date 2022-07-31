@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-image: url("bg.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: cover; /* yatay olarak tam kapladı */
+}
+
+.container {
+    padding: 20px 0;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* header start */
+header {
+    height: 100px;
+    border-bottom: 1px solid gray;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+header nav .logo a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    column-gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 300ms color ease;
+}
+
+nav ul li a:hover {
+    color: aqua;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.menu .menu-btn{
+    color: rgb(16, 92, 92);
+    text-decoration: none;
+    background-color:rgb(112, 140, 218);
+    padding: 10px; 
+    border-radius: 20px;
+    transition: 300ms all ease;
+}
+
+.menu .menu-btn:hover {
+    color: white;
+    background-color: rgb(34, 125, 125);
+}
+
+/* header end */
+
+/* responsive css start */
+
+@media(max-width: 576px) { /* ekranın genişliği 576pxden küçük olduğunda uygulanacak yeni kuralları yazarız, burada ana kodda var olan özellikler, responsive yapıda nasıl değişir onları yazarız */
+    .container {
+        width: 100%;
+        padding: 0 12px;
+    }
+    .menu ul {
+        column-gap: 20px;
+    }
+    .menu .menu-btn {
+        display: none;
+    }
+    .content {
+        padding-top: 50px;
+    }
+    .content h1 {
+        font-size: 36px;
+    }
+    .content p {
+        font-size: 16px;
+    }
+    .content .links{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+    .content .links a {
+        padding: 14px;
+        width: 90%;
+    }
+
+}
+
+/* responsive css end */
+
+/* section start */
+
+.content {
+    color: white;
+    height: calc(100vh - 100px);
+    padding-top: 150px;
+}
+
+.content h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+.content p {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.content .links {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    column-gap: 16px;
+}
+
+.content .links a {
+    display : flex;
+    background: white;
+    text-decoration: none;
+    width: 280px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 23px;
+    border-radius: 50px;
+    transition: 0.2s all ease-in;
+}
+
+.links a:hover {
+    color: white;
+    background-color:rgb(31, 171, 171);
+}
+
+/* section end */
+
+
+
