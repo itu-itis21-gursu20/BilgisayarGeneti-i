@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f3f5f9;
+}
+
+.container .sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: rgb(28, 69, 134);
+    padding: 30px 0;
+}
+
+.container .sidebar h2 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: .2s color ease-in;
+}
+
+.container .sidebar h2 span {
+    color: rgb(214, 214, 38);
+}
+
+.container .sidebar h2 span:hover {
+    color: #fff;
+}
+
+.container .sidebar h2:hover {
+    color: rgb(214, 214, 38);
+}
+
+.container .sidebar ul li a {
+    color: white;
+}
+
+.container .sidebar ul li {
+    /* li elemanının tüm bölümüdür, a ise sadece icon ve yazının olduğu bölümdür */
+    padding: 15px;
+    border-bottom: 1px solid black;
+    transition: .3s background-color linear;
+}
+
+.container .sidebar ul li:nth-child(1) {
+    border-top: 1px solid black;
+}
+
+.container .sidebar ul li:hover {
+    background-color: black;
+}
+
+.container .sidebar .social-media {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.container .sidebar .social-media a {
+    /* display: block; */
+    width: 40px; 
+    height: 40px;
+    background-color: black;   
+    line-height: 40px; /* height kadar line-height olursa logo dikeyde ortalanır */ 
+    text-align: center;
+    margin:0 5px;
+    color: #fff;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    transition: .5s;
+}
+
+.container .sidebar .social-media a:hover {
+    background-color:rgb(28, 69, 134);
+}
+
+.container .main-content {
+    margin-left: 200px;
+}
+
+.container .main-content .header {
+    padding: 20px;
+    background-color: white;
+    color: #ccc;
+}
+
+.container .main-content .info {
+    padding: 20px;
+    background-color: rgb(188, 188, 188);
+    color: gray;
+}
