@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding:0;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.post {
+    width: 47%; /* margin verileceği için taşma olur ve resim alta iner, bunu önlemek için biraz boşluk payı bırakılır */
+    overflow: hidden; /* verilen boyutu aşan varsa onu küçültür ve hizaya getirir */
+    background-color:gray;
+    float: left; /* alttakini yer varsa üste ve sağa kaydırır */
+    margin: 5px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px black;
+}
+
+.post img {
+    height: 280px;
+    width: 100%;
+}
+
+.post h2 {
+    margin:0;
+    padding:0 10px;
+}
+
+@media (max-width: 680px) {  /* buradaki px de dahildir */
+    .post{
+        width: 96%;
+        margin: 2%;
+    }
+
+}
