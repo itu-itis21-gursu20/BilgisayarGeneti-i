@@ -1,0 +1,66 @@
+* {
+    margin:0;
+    padding:0;
+    text-decoration: none;
+}
+
+body {
+    background-color:rgb(205, 205, 205);
+}
+
+.social-media {
+    /* border: 1px solid black; */
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* display: flex;
+    column-gap: 30px;
+     */
+}
+
+.social-media div {
+    display: inline;
+}
+
+.social-media div a {
+    display: inline-flex; /* logoyu kapsayan div oluştu çünkü block oldu, aynı zamanda yan yanalar çünkü inline ve ayrıca flex yapısı da kullanılabilir */
+    width: 80px;
+    height: 80px;
+    background-color: darkcyan;
+    font-size:40px;
+    color: white;
+    border-radius: 50%;
+    margin: 0 8px;
+    justify-content:center;
+    align-items:center;
+    transition: 300ms ease-in-out background-color;
+}
+
+
+.social-media a i{
+    transition: 300ms ease-in-out transform;
+}
+
+.social-media a:hover > i{
+    transform: scale(1.6) rotate(360deg);
+}
+.social-media .facebook a:hover {
+    background-color:rgb(48, 68, 150);
+}
+
+.social-media .twitter a:hover {
+    background-color:rgb(115, 181, 239);
+}
+
+.social-media .google a:hover {
+    background-color:rgb(199, 57, 44);
+}
+
+.social-media .instagram a:hover {
+    background-color:rgb(160, 98, 196);
+}
+
+.social-media .youtube a:hover {
+    background-color:rgb(210, 28, 28);
+}
