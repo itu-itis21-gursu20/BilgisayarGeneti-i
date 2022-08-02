@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body {
+    background-color:#f3f3f3;
+}
+.header {
+    background-color: rgb(72, 158, 255);
+    height: 100px;
+    color:white;
+    padding: 0 20px;
+    /* display: flex;
+    justify-content:space-between; */
+}
+
+.header .logo {
+    line-height: 100px;
+    float: left; /* bunu sola sabitledi diğerleri sağa kaydı */
+    cursor: pointer;
+    /* font-size: 23px; */
+}
+
+.menu { 
+    float: right; /* menu elemanları sağa sabitlendi */
+    line-height: 100px;
+}
+
+.menu a {
+    color:white;
+    padding:0 10px;
+    transition: 0.4s;
+}
+
+.show-menu-btn, .hide-menu-btn { 
+    transition: 0.4s;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.show-menu-btn {
+    float: right;
+}
+
+.show-menu-btn i{ 
+    line-height: 100px;
+    /* padding: 30px 0; */
+}
+
+.menu a:hover, .show-menu-btn a:hover, .hide-menu-btn a:hover {
+    color: orange;
+}
+
+#chk {
+    visibility: hidden;
+}
+
+.content {
+    padding: 0 20px;
+}
+.content img {
+    width: 100%;
+    height: 400px;
+    margin: 20px;
+}
+
+.content p{
+    text-align:justify;
+}
+
+@media screen and (max-width: 800px) { /* 800px in altına düşüldüğünde olacakları yazıyoruz */
+    .show-menu-btn, .hide-menu-btn {
+        display: block;
+    }
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+
+        padding: 35px;
+        top:0;
+        right: -100%; /* 3 çizgiye basılıp açılacak olan menü normal sayfadayken görülmemeli bu yüzden sağ taraftan daha sağa kendi kadar kaydırdık */
+        text-align:center;
+        line-height:normal;/* satır aralarının fazla açılmasını önledik */
+        transition: 0.7s ease right;
+    }
+    .menu a {
+        display: block;
+        padding: 20px;
+    }
+
+    .hide-menu-btn {
+        position:absolute;
+        top: 40px;
+        right: 40px;
+    }
+
+    .hide-menu-btn:hover {
+        color: orange;
+    }
+
+    #chk:checked ~ .menu {
+        right: 0; /* 3 çizgiye basıldığında siyah menümüz sağdan 0 boşluk aldı ve hepten görünür oldu */
+    }
+}
