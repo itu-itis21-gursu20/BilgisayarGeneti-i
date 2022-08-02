@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("./bg.jpg");
+    font-family: sans-serif;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+}
+
+.menu-bar {
+    background-color:cornflowerblue;
+    text-align:center;
+}
+
+.menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+}
+
+.menu-bar ul li {
+    /* background-color:red; */
+    width: 150px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.active, .menu-bar ul li:hover {
+    background-color:rgb(232, 213, 108);
+    /* active classına sahip olanların ve liste elemanlarından hover olunduğunda o elemanın rengi krımızı olur*/
+    border-radius: 10px;
+}
+
+.menu-bar ul li .fas {
+    margin-right: 6px;
+}
+
+.sub-menu-1 { /* normalde gözükmeyecek */
+    display: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 {
+    display:block; /* hover olduğunda ilgili submenu gözükecek */
+    position: absolute;/*  parent olan dive göre kendini konumlandırır */
+    background-color: cornflowerblue;
+    margin-top: 10px;
+    margin-left: -15px;
+    font-size: 10px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul {
+    display: block; /* elemanları blok yaparak alt alta getirdik */
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    text-align: left;
+    border-radius: 0; /* alttaki kaymayı engeller */
+    cursor: pointer;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover{
+    color: gold;
+}
+
+.fa-caret-right {
+    color: #fff;
+    font-size: 14px;
+    float: right;
+}
+
+/* .sub-menu-1 ul li, .sub-menu-2 ul li {
+    display: flex;
+    justify-content:space-between;
+} */
+
+.sub-menu-2 {
+    display:none;
+}
+
+.hover-me:hover .sub-menu-2{
+    display:block;
+    position: absolute;
+    margin-top: -45px;
+    margin-left: 100px;
+    background-color:cornflowerblue;
+
+}
