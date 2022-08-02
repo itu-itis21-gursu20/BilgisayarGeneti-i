@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: url("https://media.istockphoto.com/photos/forest-wooden-table-background-summer-sunny-meadow-with-green-grass-picture-id1353553203?b=1&k=20&m=1353553203&s=170667a&w=0&h=QTyTGI9tWQluIlkmwW0s7Q4z7R_IT8egpzzHjW3cSas=");
+    background-size: 110% 110%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.profile-card {
+    width: 400px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.card-header {
+    background-color: #2c3a47;
+    padding: 60px 40px;
+}
+
+.picture img {
+    /* görsel blok olursa */
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+}
+
+.picture {
+    /* ve görselin divi inline-block olursa iç içe bir yapı oluşur */
+    display: inline-block;
+    background-color: red;
+    padding: 10px;
+    border-radius: 50%;
+    /* margin: auto; */
+    background: linear-gradient(to right, salmon, #2c3a47);
+    background-size: 200% 200%;
+    animation: animasyon 2s linear infinite;
+}
+
+
+@keyframes animasyon {
+    25% {
+        background-position: left bottom;
+    }
+
+    50% {
+        background-position: right bottom;
+    }
+
+    75% {
+        background-position: right top;
+    }
+
+    100% {
+        background-position: left top;
+    }
+}
+
+.name {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.desc {
+    font-size: 18px;
+    color: salmon;
+}
+
+.sm {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    column-gap: 20px;
+}
+
+.sm a {
+    font-size: 30px;
+    color: white;
+    width: 56px;
+    transition: .4s ease color;
+}
+
+.sm a:hover {
+    color: salmon;
+}
+
+.contact-btn {
+    display: inline-block;
+    /* margin verildiğinde blok gibi davransın ki boşluklar ayarlansın */
+    color: salmon;
+    border: 2px solid white;
+    padding: 17px 40px;
+    border-radius: 5px;
+    margin-top: 16px;
+    transition: 300ms background-color linear;
+}
+
+.contact-btn:hover {
+    background-color: salmon;
+    color: white;
+}
+
+.card-footer {
+    background-color: white;
+    padding: 60px 10px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+
+.item {
+    /* display: flex;
+    flex-direction: column; */
+    font-size: 13px;
+    flex: 1;
+}
+
+.item span {
+    display: block;
+    color: #2c3a47;
+    font-size: 30px;
+}
