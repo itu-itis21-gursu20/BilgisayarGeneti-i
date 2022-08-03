@@ -1,0 +1,344 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    /* kapsayıcı olarak body yi kullanıyoruz */
+    display: grid;
+    grid-template-areas:
+        'header'
+        'content'
+        'footer';
+    height: 2000px;
+    grid-template-rows: 100px 1fr 300px;
+    background-color: bisque;
+
+}
+
+div {
+    border: 1px solid black;
+}
+
+/* --------------------------------------------- */
+
+#header {
+    grid-area: header;
+    /* background-color: red; */
+    background: url('./images/logo.png') no-repeat 10vw center, white;
+    /* backgroundı tek satırda kullanmak ve bg-colorı en sona vermek daha iyi olur */
+    /* sırasıyla yatay ve dikeyde resim konumlanır, px, vw ... verilebilir
+    10vw demek ekranın %10u kadar bir ölçüdür */
+    background-size: 15%;
+
+    position: sticky;
+    top: 0;
+    z-index: 99;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+#header>a {
+    color: lightgray;
+    margin: 0.5rem;
+}
+
+#header ul {
+    list-style: none;
+    display: flex;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+#header ul li {
+    margin: 0.25rem;
+}
+
+#header ul li a {
+    background-color: gray;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-family: 'Permanent Marker', cursive;
+}
+
+#header ul li a.anasayfa {
+    background-color: red;
+}
+
+#header ul li a:hover {
+    color: black;
+}
+
+/* ------------------------------------------ */
+
+#content {
+    grid-area: content;
+    /* background-color: aqua; */
+    display: grid;
+    /* content divi alt iki dive sahip olduğu için bölme yaptık ve grid kullandık */
+    grid-template-rows: 3fr 8fr;
+}
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    /* ? */
+    position: relative;
+}
+
+.intro::before {
+    /* introdan önce bir şey ekleyeceğimizde öncelikle introda relative ve burada absolute kullanmalıyız ki referans noktası oluşsun */
+    content: '';
+    background: url(./images/featured.jpg) no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* kapsayıcıdan önce resim geldi çünkü beforeda resim var */
+    /* opacity: 0.5; */
+}
+
+.introKapsayici {
+    flex: 0 0 30%;
+    /* bu div tüm alanı kaplamasın yani 0 0 ile grow ve shrink devre dışı kaldı ve tüm divin 30%sini kaplasın */
+    border: none;
+    margin-left: 10vw;
+    margin-top: 2rem;
+    z-index: 98;
+    /* önce kapsayıcının gelmesi için z-index verdik, z-index sadece position özelliğine sahip olanlarda kullanılabilir burada direkt position kullanılmamış fakat parentı polan introda var ve buraya kalıtılmış oldu */
+    display: flex;
+    flex-direction: column;
+}
+
+.introKapsayici h5 {
+    display: block;
+    /* h5teki yazı bir buton gibi olacak bu yüzden block yaptık */
+    background: orange;
+    width: 10rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.introKapsayici h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bolder;
+    font-size: 2rem;
+    color: rgb(134, 118, 118);
+}
+
+.introKapsayici p {
+    color: rgb(91, 91, 91);
+    font-size: 1.2rem;
+}
+
+.introKapsayici a.btn {
+    display: block;
+    width: 10rem;
+    background-color: red;
+    opacity: 0.8;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    align-self: flex-end;
+    margin-right: 2rem;
+}
+
+.article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 1fr 1fr 1fr veya repeat(3, 1fr) de olurdu */
+    grid-template-rows: 50px 2fr 3fr 2fr;
+    grid-gap: 1rem;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.article>div:nth-child(1) {
+    grid-column: 1 / span 3;
+}
+
+.article>div:nth-child(2) {
+    /* spor içerikli kutu buranun birleşmesiyle oluştu */
+    grid-column: 1 / span 2;
+    display: flex;
+    align-items: center;
+}
+
+.article>div:nth-child(3) {
+    background-color: rgb(51, 51, 51);
+    border-radius: 0 2rem 0 2rem;
+}
+
+.article>div:nth-child(7) {
+    background-color: rgb(192, 24, 24);
+    border-radius: 2rem 0 2rem 0;
+}
+
+.article>div:last-child {
+    /* grid-column: 2 / span 2; -> soldan sağa birleştirme*/
+    grid-column-start: 4;
+    grid-column-end: 2;
+    display: flex;
+    align-items: center;
+    /* sağdan sola birleştirme */
+}
+
+.article>div {
+    border: none;
+    background-color: white;
+
+}
+
+.article .contentBaslik {
+    background: none;
+    padding: 20px 30px;
+}
+
+.article .contentBaslik h3 {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.article .contentBox img {
+    height: 250px;
+    margin: 1rem;
+}
+
+.article .contentBox .boxKapsayici {
+    border: none;
+    background: none;
+    margin: 0.75rem;
+
+}
+
+.article .contentBox h5 {
+    display: block;
+    color: black;
+    width: 7rem;
+    padding: 0.25rem 1rem;
+    border-radius: 1rem;
+}
+
+.article .contentBox h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0.25rem;
+}
+
+.article .contentBox p {
+    font-size: 1.2rem;
+    margin: 0.25rem;
+}
+
+.article .contentBox h5.sporBaslik {
+    background: green;
+}
+
+.article .contentBox h5.eglenceBaslik {
+    background: pink;
+}
+
+.article .contentBox h5.teknoBaslik {
+    background: darkblue;
+}
+
+/* --------------------------------------------- */
+
+#footer {
+    grid-area: footer;
+    background-color: rgb(49, 49, 49);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 3fr 1fr;
+    grid-gap: 1rem;
+    border: none;
+}
+
+#footer div:first-child {
+    margin-left: 10vw;
+}
+
+#footer div:nth-child(4) {
+    margin-right: 10vw;
+}
+
+#footer .copyRightBox {
+    grid-column: 1 / span 4;
+    text-align: center;
+    color: white;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerBox {
+    padding: 1rem;
+    background: none;
+    border: none;
+}
+
+.footerBox img {
+    width: 65%;
+    margin-bottom: 1rem;
+}
+
+.footerBox p {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.footerBox h3 {
+    font-size: 2rem;
+    color: white;
+}
+
+.footerBox form#iletisimForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerBox form button#gonderBtn {
+    margin: 1rem 0;
+    padding: 1rem 0;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.footerBox ul {
+    list-style: none;
+    color: white;
+}
+
+.footerBox ul li {
+    border-bottom: thin dotted black;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.footerBox a.uyeBtn {
+    background-color: gold;
+    display: block;
+    width: 5rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    margin: 1rem;
+}
